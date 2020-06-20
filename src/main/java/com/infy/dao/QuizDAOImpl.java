@@ -43,13 +43,18 @@ public class QuizDAOImpl implements QuizDAO{
 			String queryString="select q from QuizEntity q where q.quizId="+quizId;
 			System.out.println(queryString);
 			Query query=entityManager.createQuery(queryString);
+			System.out.println(queryString);
 			QuizEntity qure=null;
+//			System.out.println("query.getResultList()->"+query.getSingleResult());
 			qure=(QuizEntity)query.getSingleResult();
 			qe.add(qure);
 			System.out.println(qure.getQuestion());	
 			
 			//check the break condition
-			if(qure == null)break;
+			if(qe.size() == 3) {
+				System.out.println("break");
+				break;
+			}
 		
 		}
 		/***********/

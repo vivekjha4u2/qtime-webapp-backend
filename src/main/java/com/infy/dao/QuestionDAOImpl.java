@@ -53,6 +53,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 				String queryString="select q from QuestionEntity q where q.quesId="+random;
 				System.out.println(queryString);
 				Query query=entityManager.createQuery(queryString);
+				System.out.println("query: "+query);
 				QuestionEntity ques=null;
 				ques=(QuestionEntity)query.getSingleResult();
 				qe.add(ques);

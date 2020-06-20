@@ -11,7 +11,9 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import com.infy.entity.QuestionEntity;
+import com.infy.entity.QuizReplyEntity;
 import com.infy.model.Question;
+import com.infy.model.QuizReply;
 
 
 
@@ -51,6 +53,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 				String queryString="select q from QuestionEntity q where q.quesId="+random;
 				System.out.println(queryString);
 				Query query=entityManager.createQuery(queryString);
+				System.out.println("query: "+query);
 				QuestionEntity ques=null;
 				ques=(QuestionEntity)query.getSingleResult();
 				qe.add(ques);
@@ -106,13 +109,11 @@ public class QuestionDAOImpl implements QuestionDAO {
 		}
 		
 		
-		return qids;
-		
-		
-		
-		
-		
+		return qids;		
 		
 	}
+	
+	
+	
 	
 }

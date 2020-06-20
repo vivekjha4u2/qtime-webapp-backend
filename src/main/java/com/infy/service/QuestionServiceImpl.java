@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.infy.dao.QuestionDAO;
 import com.infy.model.Question;
+import com.infy.model.QuizReply;
 
 
 @Service("questionService")
@@ -44,4 +45,8 @@ public class QuestionServiceImpl implements QuestionService {
 		
 		return quesByCategory;
 	}
+
+	
+	
+	
 }

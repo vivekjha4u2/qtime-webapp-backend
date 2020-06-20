@@ -11,7 +11,9 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import com.infy.entity.QuestionEntity;
+import com.infy.entity.QuizReplyEntity;
 import com.infy.model.Question;
+import com.infy.model.QuizReply;
 
 
 
@@ -106,13 +108,11 @@ public class QuestionDAOImpl implements QuestionDAO {
 		}
 		
 		
-		return qids;
-		
-		
-		
-		
-		
+		return qids;		
 		
 	}
+	
+	
+	
 	
 }

@@ -36,20 +36,20 @@ public class QuizDAOImpl implements QuizDAO{
 	@Override
 	public List<Quiz> getQuestionByQuizId(String quizId) throws Exception {
 		List<QuizEntity> qe=new ArrayList<QuizEntity>();
-		String querystr="select q from QuizEntity q where q.quizId=:id ";
+		String querystr="select q from QuizEntity q ";
 		Query query=entityManager.createQuery(querystr);
-		query.setParameter("id",quizId);
+		//query.setParameter("id",quizId);
 
 
 		 qe=query.getResultList();
 		 System.out.println(qe.toString());
 		 System.out.println(qe.size()+" "+qe.get(2).getQuestion());
-		/*for(QuizEntity item:qe)
+		for(QuizEntity item:qe)
 		{
 			System.out.println(item.getQuizId()+" "+item.getQuestion());
 		}
 
-		 */
+		 
 		return null;
 	}
 

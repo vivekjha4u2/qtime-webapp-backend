@@ -28,6 +28,7 @@ public class QuizServiceImpl implements QuizService {
 			throw e;
 		}
 	}
+<<<<<<< HEAD
 	
 	//for getting ques & replies from quizId
 	@Override
@@ -44,6 +45,21 @@ public class QuizServiceImpl implements QuizService {
 		return quesByQuizId;
 	}
 	
+=======
+
+	@Override
+	public List<Quiz> getQuestionByQuizId(String quizId) throws Exception {
+		List<Quiz> ql=quizDao.getQuestionByQuizId(quizId);
+		if(ql.size()==0 && ql.isEmpty())
+		{
+			throw new Exception("QuestionService.QUESTIONS_NOT_FOUND");
+		}
+		return ql;
+	}
+
+	//for getting ques & replies from quizId
+
+>>>>>>> 9d5addbcddf725c7e91778f50dc789fd2ae3b2b3
 	
 		
 }

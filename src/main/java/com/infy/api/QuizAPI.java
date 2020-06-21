@@ -44,6 +44,7 @@ public class QuizAPI {
 		
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping(value="/{quizId}",method=RequestMethod.GET)
 	public ResponseEntity<List<Quiz>> getQuestionByQuizId(@PathVariable String quizId) throws Exception
 	{
@@ -65,6 +66,21 @@ public class QuizAPI {
 			System.out.println("ohhoman");
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,	environment.getProperty(e.getMessage()), e);
 	    }
+=======
+	@RequestMapping(value = "{quizId}",method = RequestMethod.GET)
+	public ResponseEntity<List<Quiz>> getquestionByQuizId(@PathVariable String quizId) throws Exception{
+		try{
+			System.out.println("here");
+			List<Quiz> ql=quizService.getQuestionByQuizId(quizId);
+			ResponseEntity<List<Quiz>> response=new ResponseEntity<List<Quiz>>(ql,HttpStatus.OK);
+			return response;
+
+		}
+		catch (Exception e) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,	environment.getProperty(e.getMessage()), e);
+		}
+
+>>>>>>> 9d5addbcddf725c7e91778f50dc789fd2ae3b2b3
 	}
 	
 	

@@ -9,13 +9,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="quiz_ques")
-public class QuizEntity implements Serializable{
+public class QuizEntity {
 	
 	@Id
-	@Column(name="quiz_id")
 	private String quizId;
-	
-	@Column
+
 	private String question;
 
 	public String getQuizId() {

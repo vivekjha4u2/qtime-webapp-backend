@@ -2,6 +2,10 @@ package com.infy.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.stream.Collectors;
+>>>>>>> 9d5addbcddf725c7e91778f50dc789fd2ae3b2b3
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,6 +19,7 @@ import com.infy.model.Quiz;
 import com.infy.model.QuizReply;
 
 @Repository("QuizDao")
+
 public class QuizDAOImpl implements QuizDAO{
 
 	@PersistenceContext
@@ -30,6 +35,7 @@ public class QuizDAOImpl implements QuizDAO{
 		
 		return q.getQuizId();
 	}
+<<<<<<< HEAD
 	
 	//getting ques by quizId from quiz entity
 	@Override
@@ -84,4 +90,29 @@ public class QuizDAOImpl implements QuizDAO{
 		System.out.println(qe.size());		
 		return quesList;
 	}
+=======
+
+	@Override
+	public List<Quiz> getQuestionByQuizId(String quizId) throws Exception {
+		List<QuizEntity> qe=new ArrayList<QuizEntity>();
+		String querystr="select q from QuizEntity q ";
+		Query query=entityManager.createQuery(querystr);
+		//query.setParameter("id",quizId);
+
+
+		 qe=query.getResultList();
+		 System.out.println(qe.toString());
+		 System.out.println(qe.size()+" "+qe.get(2).getQuestion());
+		for(QuizEntity item:qe)
+		{
+			System.out.println(item.getQuizId()+" "+item.getQuestion());
+		}
+
+		 
+		return null;
+	}
+
+
+
+>>>>>>> 9d5addbcddf725c7e91778f50dc789fd2ae3b2b3
 }

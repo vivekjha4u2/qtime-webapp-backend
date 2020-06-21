@@ -43,30 +43,7 @@ public class QuizAPI {
 	    }
 		
 	}
-	
-<<<<<<< HEAD
-	@RequestMapping(value="/{quizId}",method=RequestMethod.GET)
-	public ResponseEntity<List<Quiz>> getQuestionByQuizId(@PathVariable String quizId) throws Exception
-	{
-		try {
-			
-			List<Quiz> quiz=quizService.getQuestionByQuizId(quizId);
-			System.out.println("polp");
-			for(Quiz item:quiz)
-			{
-				System.out.println(item.getQuestion());
-				
-			}
-			ResponseEntity<List<Quiz>> response=new ResponseEntity<List<Quiz>>(quiz,HttpStatus.OK);
-			return response;
-			
-		}
-		
-		catch (Exception e) {
-			System.out.println("ohhoman");
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,	environment.getProperty(e.getMessage()), e);
-	    }
-=======
+
 	@RequestMapping(value = "{quizId}",method = RequestMethod.GET)
 	public ResponseEntity<List<Quiz>> getquestionByQuizId(@PathVariable String quizId) throws Exception{
 		try{
@@ -80,7 +57,6 @@ public class QuizAPI {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,	environment.getProperty(e.getMessage()), e);
 		}
 
->>>>>>> 9d5addbcddf725c7e91778f50dc789fd2ae3b2b3
 	}
 	
 	

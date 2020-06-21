@@ -28,24 +28,7 @@ public class QuizServiceImpl implements QuizService {
 			throw e;
 		}
 	}
-<<<<<<< HEAD
-	
-	//for getting ques & replies from quizId
-	@Override
-	public List<Quiz> getQuestionByQuizId(String quizId) throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("servStart");
-		List<Quiz> quesByQuizId=quizDao.getQuestionByQuizId(quizId);
-		System.out.println("servEnd");
-		if(quesByQuizId.isEmpty() && quesByQuizId.size()==0)
-		{
-			throw new Exception("QuestionByQuizService.QUESTIONS_NOT_FOUND");
-		}
-		
-		return quesByQuizId;
-	}
-	
-=======
+
 
 	@Override
 	public List<Quiz> getQuestionByQuizId(String quizId) throws Exception {
@@ -59,7 +42,7 @@ public class QuizServiceImpl implements QuizService {
 
 	//for getting ques & replies from quizId
 
->>>>>>> 9d5addbcddf725c7e91778f50dc789fd2ae3b2b3
+
 	
 		
 }

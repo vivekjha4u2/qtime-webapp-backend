@@ -2,6 +2,7 @@ package com.infy.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
@@ -33,6 +34,7 @@ public class QuizDAOImpl implements QuizDAO{
 		return q.getQuizId();
 	}
 
+
 	@Override
 	public List<Quiz> getQuestionByQuizId(String quizId) throws Exception {
 		List<QuizEntity> qe=new ArrayList<QuizEntity>();
@@ -57,7 +59,5 @@ public class QuizDAOImpl implements QuizDAO{
 		 
 		return ql;
 	}
-
-
 
 }

@@ -29,6 +29,7 @@ public class QuizServiceImpl implements QuizService {
 		}
 	}
 
+
 	@Override
 	public List<Quiz> getQuestionByQuizId(String quizId) throws Exception {
 		List<Quiz> ql=quizDao.getQuestionByQuizId(quizId);
@@ -40,6 +41,7 @@ public class QuizServiceImpl implements QuizService {
 	}
 
 	//for getting ques & replies from quizId
+
 
 	
 		

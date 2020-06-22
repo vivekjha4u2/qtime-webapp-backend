@@ -44,7 +44,7 @@ public class QuizAPI {
 		
 	}
 	
-	@RequestMapping(value = "{quizId}",method = RequestMethod.GET)
+	@RequestMapping(value = "/{quizId}",method = RequestMethod.GET)
 	public ResponseEntity<List<Quiz>> getquestionByQuizId(@PathVariable String quizId) throws Exception{
 		try{
 			System.out.println("here");

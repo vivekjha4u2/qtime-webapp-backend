@@ -1,15 +1,15 @@
 package com.infy.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="quiz_reply")
 public class QuizReplyEntity {
 	@Id
-	@Column(name="quiz_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="rid")
+	private long rId;
+
 	private String quizId;
 	
 	@Column
@@ -17,9 +17,17 @@ public class QuizReplyEntity {
 	
 	@Column
 	private String answer;
-	
+
 	@Column
 	private String p_name;
+
+	public long getrId() {
+		return rId;
+	}
+
+	public void setrId(long rId) {
+		this.rId = rId;
+	}
 
 	public String getQuizId() {
 		return quizId;

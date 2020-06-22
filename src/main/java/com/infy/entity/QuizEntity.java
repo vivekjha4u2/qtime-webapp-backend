@@ -2,19 +2,28 @@ package com.infy.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="quiz_ques")
 public class QuizEntity {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="qid")
+	private long qId;
+
 	private String quizId;
 
 	private String question;
+
+	public long getqId() {
+		return qId;
+	}
+
+	public void setqId(long qId) {
+		this.qId = qId;
+	}
 
 	public String getQuizId() {
 		return quizId;

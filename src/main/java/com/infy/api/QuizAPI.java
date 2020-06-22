@@ -49,7 +49,7 @@ public class QuizAPI {
 
 	public ResponseEntity<List<Quiz>> getquestionByQuizId(@PathVariable String quizId) throws Exception{
 		try{
-			System.out.println("here");
+			//System.out.println("here");
 			List<Quiz> ql=quizService.getQuestionByQuizId(quizId);
 			ResponseEntity<List<Quiz>> response=new ResponseEntity<List<Quiz>>(ql,HttpStatus.OK);
 			return response;

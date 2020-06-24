@@ -22,7 +22,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
+	 
 	@Override
 	public int addQuestion(Question question)
 	{
@@ -47,7 +47,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 		List<QuestionEntity> qe=new ArrayList<QuestionEntity>();
 		while(true)
 		{
-			int random=r.nextInt((37 - 1) + 1);
+			int random=r.nextInt((90 - 1) + 1);
 			if(qids.contains(random))
 			{
 				String queryString="select q from QuestionEntity q where q.quesId="+random;

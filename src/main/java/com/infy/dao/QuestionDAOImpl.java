@@ -45,15 +45,15 @@ public class QuestionDAOImpl implements QuestionDAO {
 	public List<Question> getQuestionByCategory(char category) throws Exception {
 		// TODO Auto-generated method stub
 		List<Integer> qids=getIdsByCategory(category);
-		Random r = new Random();		
+//		Random r = new Random();		
 		
 		List<QuestionEntity> qe=new ArrayList<QuestionEntity>();
 
-		int [] arr = ThreadLocalRandom.current().ints(0,37).distinct().limit(36).toArray();
+		int [] arr = ThreadLocalRandom.current().ints(0,97).distinct().limit(96).toArray();
 //		for(int num:arr)
 //		System.out.println(" num: "+num);
 		int i=0;
-		while(qe.size()<=15 )
+		while(qe.size()<=20 )
 		{
 
 			i++;
@@ -72,7 +72,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 			
 			
 			
-			if(qe.size()==15)
+			if(qe.size()==20)
 			{
 				break;
 			}
@@ -92,6 +92,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 			question.setQuesId(item.getQuesId());
 			question.setQuestion(item.getQuestion());
 			question.setCategory(item.getCategory());
+			question.setUrl(item.getUrl());
 			quesList.add(question);
 		}
 	

@@ -4,6 +4,13 @@ public class Question {
 	private int quesId;
 	private String question;
 	private char category;
+	private String url;
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
 	public int getQuesId() {
 		return quesId;
 	}

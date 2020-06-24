@@ -25,7 +25,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
+	 
 	@Override
 	public int addQuestion(Question question)
 	{
@@ -55,6 +55,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 		int i=0;
 		while(qe.size()<=15 )
 		{
+
 			i++;
 //			int random=r.nextInt((37 - 1) + 1);
 			System.out.println("arr[i]: "+arr[i]);

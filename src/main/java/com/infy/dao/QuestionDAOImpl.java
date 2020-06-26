@@ -1,8 +1,11 @@
 package com.infy.dao;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -42,18 +45,24 @@ public class QuestionDAOImpl implements QuestionDAO {
 	public List<Question> getQuestionByCategory(char category) throws Exception {
 		// TODO Auto-generated method stub
 		List<Integer> qids=getIdsByCategory(category);
-		Random r = new Random();
+//		Random r = new Random();		
 		
 		List<QuestionEntity> qe=new ArrayList<QuestionEntity>();
-		while(true)
+
+		int [] arr = ThreadLocalRandom.current().ints(0,97).distinct().limit(96).toArray();
+//		for(int num:arr)
+//		System.out.println(" num: "+num);
+		int i=0;
+		while(qe.size()<=20 )
 		{
-			int random=r.nextInt((90 - 1) + 1);
-			if(qids.contains(random))
+
+			i++;
+//			int random=r.nextInt((37 - 1) + 1);
+			System.out.println("arr[i]: "+arr[i]);
+			if(qids.contains(arr[i]))
 			{
-				String queryString="select q from QuestionEntity q where q.quesId="+random;
-				System.out.println(queryString);
+				String queryString="select q from QuestionEntity q where q.quesId="+arr[i];
 				Query query=entityManager.createQuery(queryString);
-				System.out.println("query: "+query);
 				QuestionEntity ques=null;
 				ques=(QuestionEntity)query.getSingleResult();
 				qe.add(ques);
@@ -63,7 +72,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 			
 			
 			
-			if(qe.size()==15)
+			if(qe.size()==20)
 			{
 				break;
 			}
@@ -83,12 +92,13 @@ public class QuestionDAOImpl implements QuestionDAO {
 			question.setQuesId(item.getQuesId());
 			question.setQuestion(item.getQuestion());
 			question.setCategory(item.getCategory());
+			question.setUrl(item.getUrl());
 			quesList.add(question);
 		}
 	
 		System.out.println(quesList.size());
 		
-		System.out.println(qe.size());
+		System.out.println("qe.size: :::::::::::::::::::"+qe.size());
 		
 		return quesList;
 	}

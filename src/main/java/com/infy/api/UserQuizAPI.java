@@ -31,8 +31,6 @@ public class UserQuizAPI {
 	@Autowired
 	private Environment environment;
 	
-	
-	
 
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public ResponseEntity<String> userRegister(@RequestBody User user) throws Exception {

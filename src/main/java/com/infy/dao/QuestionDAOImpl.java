@@ -50,7 +50,6 @@ public class QuestionDAOImpl implements QuestionDAO {
 		List<QuestionEntity> qe=new ArrayList<QuestionEntity>();
 
 		int [] arr = ThreadLocalRandom.current().ints(0,97).distinct().limit(96).toArray();
-	System.out.println(arr.length);
 //		for(int num:arr)
 //		System.out.println(" num: "+num);
 		int i=0;

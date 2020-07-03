@@ -33,16 +33,15 @@ public class QuizAPI {
 	public ResponseEntity<String> createQuiz(@RequestBody Quiz quiz) throws Exception{
 		try {			
 			System.out.println("here");
-			String exampleId=quizService.createQuiz(quiz);
-			String s=environment.getProperty("API.QUESTION_ADDED_SUCCESSFULLY")+" : "+exampleId;
+			String exampleId=quizService.createQuiz(quiz);			
+			String s=environment.getProperty("API.REGISTRATION_SUCCESSFUL")+" : "+exampleId;
 			ResponseEntity<String> response=new ResponseEntity<String>(s,HttpStatus.CREATED);
 			return response;
 		}
 		catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,	environment.getProperty(e.getMessage()), e);
 	    }
-
-
+		
 	}
 
 

@@ -28,6 +28,8 @@ public class QuizDAOImpl implements QuizDAO{
 		QuizEntity q = new QuizEntity();
 		q.setQuestion(quiz.getQuestion());
 		q.setQuizId(quiz.getQuizId());
+		System.out.println(quiz.getUrl());
+		q.setUrl(quiz.getUrl());
 		
 	    entityManager.persist(q);
 		

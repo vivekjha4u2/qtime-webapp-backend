@@ -53,6 +53,7 @@ public class QuizDAOImpl implements QuizDAO{
 			q.setQid(item.getqId());
 			q.setQuizId(item.getQuizId());
 			q.setQuestion(item.getQuestion());
+			q.setUrl(item.getUrl());
 			ql.add(q);
 
 
